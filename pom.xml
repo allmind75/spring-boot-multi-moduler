@@ -6,9 +6,11 @@
   <packaging>pom</packaging>
 
   <!-- Maven으로 추가한 모듈 -->
+  <!-- https://spring.io/guides/gs/multi-module/ -->
   <modules>
     <module>air</module>
     <module>hotel</module>
+    <module>core</module>
   </modules>
 
   <parent>
@@ -17,6 +19,7 @@
     <version>2.2.4.RELEASE</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
+
   <groupId>com.example</groupId>
   <artifactId>admintest</artifactId>
   <version>0.0.1-SNAPSHOT</version>
@@ -44,30 +47,45 @@
         </exclusion>
       </exclusions>
     </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
+    </dependency>
   </dependencies>
 
+
+<!--  &lt;!&ndash; Profiles 설정 &ndash;&gt;-->
 <!--  <profiles>-->
 <!--    <profile>-->
 <!--      <id>air</id>-->
-<!--      <properties>-->
-<!--        <env>air</env>-->
-<!--      </properties>-->
+<!--      <dependencies>-->
+<!--        <dependency>-->
+<!--          <groupId>com.example</groupId>-->
+<!--          <artifactId>air</artifactId>-->
+<!--          <version>0.0.1-SNAPSHOT</version>-->
+<!--        </dependency>-->
+<!--      </dependencies>-->
 <!--    </profile>-->
 <!--    <profile>-->
 <!--      <id>hotel</id>-->
-<!--      <properties>-->
-<!--        <env>hotel</env>-->
-<!--      </properties>-->
+<!--      <dependencies>-->
+<!--        <dependency>-->
+<!--          <groupId>com.example</groupId>-->
+<!--          <artifactId>hotel</artifactId>-->
+<!--          <version>0.0.1-SNAPSHOT</version>-->
+<!--        </dependency>-->
+<!--      </dependencies>-->
 <!--    </profile>-->
 <!--  </profiles>-->
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
+<!--  <build>-->
+<!--    <plugins>-->
+<!--      <plugin>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--      </plugin>-->
+<!--    </plugins>-->
 
 <!--    <resources>-->
 <!--      <resource>-->
@@ -77,6 +95,6 @@
 <!--        <directory>src/main/java/com/example/admintest/${env}</directory>-->
 <!--      </resource>-->
 <!--    </resources>-->
-  </build>
+<!--  </build>-->
 
 </project>

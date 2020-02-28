@@ -13,11 +13,20 @@
 
   <dependencies>
     <!-- 다른 모듈이 필요한 경우 추가 -->
-<!--    <dependency>-->
-<!--      <groupId>com.example</groupId>-->
-<!--      <artifactId>hotel</artifactId>-->
-<!--      <version>0.0.1-SNAPSHOT</version>-->
-<!--    </dependency>-->
+    <dependency>
+      <groupId>com.example</groupId>
+      <artifactId>core</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
 
+  <build>
+    <finalName>admintest-air</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 </project>

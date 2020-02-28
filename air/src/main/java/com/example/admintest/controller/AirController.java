@@ -1,5 +1,6 @@
-package com.example.admintest.air;
+package com.example.admintest.controller;
 
+import com.example.admintest.MultiModuleTest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,6 +19,8 @@ public class AirController {
 
     @GetMapping(path = "/air")
     public String getAir() {
-        return "AirController";
+        MultiModuleTest multiModuleTest = new MultiModuleTest();
+        multiModuleTest.setName("Multi Module Test!!!");
+        return multiModuleTest.getName();
     }
 }
